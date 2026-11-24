@@ -1,559 +1,296 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090b09">
 <title>Guru Fitness Club | Mansa</title>
-
-<meta name="description" content="Guru Fitness Club, Mansa. Rated 4.9 stars by 195 reviewers. Contact us for fitness and membership enquiries.">
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+<meta name="description" content="Guru Fitness Club, Mansa. Fitness training, exercise library and membership enquiries.">
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+*{box-sizing:border-box;margin:0;padding:0;scroll-behavior:smooth}
+:root{--gold:#c9a66b;--bg:#090b09;--panel:#151915;--white:#f5f2e9;--muted:#aaa}
+body{background:var(--bg);color:var(--white);font-family:Arial,sans-serif}
+a{text-decoration:none;color:inherit}
+.container{width:88%;max-width:1200px;margin:auto}
+.gold{color:var(--gold)}
+.btn{display:inline-block;background:var(--gold);color:#111;padding:14px 22px;font-weight:bold;font-size:12px;margin:8px 5px;border:1px
+solid var(--gold);transition:.25s}
+.btn:hover{background:#ead2a4;transform:translateY(-3px)}
+.outline{background:transparent;color:var(--gold)}
+.tag{color:var(--gold);letter-spacing:4px;font-size:11px;font-weight:bold}
+nav{background:#080a08;padding:20px 7%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10;bo
+rder-bottom:1px solid #59472c}
+.logo{font-size:21px;font-weight:900;color:var(--gold)}
+.logo small{display:block;font-size:9px;letter-spacing:5px;color:white;margin-top:4px}
+.navlinks{display:flex;gap:20px;align-items:center}
+.navlinks a{font-size:11px;font-weight:bold}
+.navlinks a:hover{color:var(--gold)}
+.menu{display:none;background:none;border:0;color:var(--gold);font-size:27px}
+.hero{min-height:620px;padding:120px 9%;display:flex;align-items:center;background:linear-gradient(90deg,#080a09 12%,#080a09d9
+55%,#080a0933),url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600') center/cover}
+.hero-content{max-width:700px}
+.hero h1{font-size:clamp(44px,7vw,78px);line-height:1.08;margin:24px 0;font-weight:900}
+.hero h1 span{color:var(--gold)}
+.hero p{color:#ccc;line-height:2;max-width:520px;font-size:13px;margin-bottom:22px}
+section{padding:85px 0}
+.heading{text-align:center;margin:0 auto 45px}
+.heading h2{font-size:clamp(29px,5vw,44px);margin-top:15px}
+.heading h2 span{color:var(--gold)}
+.heading p{color:var(--muted);font-size:12px;line-height:1.9;margin:14px auto 0;max-width:650px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:var(--panel)}
+.stat{text-align:center;padding:28px 10px;border:1px solid #333}
+.stat strong{display:block;color:var(--gold);font-size:30px}
+.stat small{color:#aaa;font-size:10px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+.about img{width:100%;height:410px;object-fit:cover}
+.about h2{font-size:40px;margin:20px 0}
+.about p{color:#aaa;font-size:13px;line-height:2;margin-bottom:18px}
+.dark{background:#101410;border-block:1px solid #393020}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--panel);border:1px solid #333;padding:28px;transition:.25s}
+.card:hover{border-color:var(--gold);transform:translateY(-5px)}
+.card h3{color:var(--gold);margin:13px 0}
+.card p{font-size:12px;color:#aaa;line-height:1.9}
+.number{font-size:29px;color:var(--gold)}
+.card a{display:inline-block;color:var(--gold);font-size:10px;font-weight:bold;margin-top:15px}
+.search{display:flex;max-width:520px;margin:0 auto 30px}
+.search input{flex:1;min-width:0;padding:15px;background:#151915;color:white;border:1px solid #444;outline:none}
+.search button{padding:15px;background:var(--gold);border:0;font-weight:bold}
+.exercise{padding:0;overflow:hidden}
+.exercise img{width:100%;height:175px;object-fit:cover}
+.exercise .inside{padding:20px}
+.exercise small{color:var(--gold);font-size:10px}
+.diet{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.dietbox{padding:30px;background:var(--panel);border:1px solid #59472c}
+.dietbox h3{color:var(--gold);margin-bottom:15px}
+.dietbox p{font-size:13px;color:#aaa;line-height:2}
+.banner{text-align:center;padding:80px 20px;background:linear-gradient(#080a09e8,#080a09e8),url('https://images.unsplash.com/photo-15344
+38327276-14e5300c3a48?w=1500') center/cover}
+.banner h2{font-size:clamp(30px,5vw,48px);margin:20px 0}
+.banner h2 span{color:var(--gold)}
+.banner p{font-size:12px;color:#aaa;line-height:2;margin:0 auto 25px;max-width:600px}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.gallery img{width:100%;height:190px;object-fit:cover;transition:.25s}
+.gallery img:hover{transform:scale(1.03)}
+.rating{text-align:center;padding:40px;background:var(--panel);border:1px solid #59472c;max-width:650px;margin:auto}
+.rating strong{font-size:65px;color:var(--gold)}
+.stars{color:var(--gold);font-size:25px;margin:12px}
+.rating p{color:#aaa;font-size:12px}
+.faq{max-width:800px;margin:auto}
+.faq-item{border-bottom:1px solid #59472c}
+.faq button{width:100%;padding:20px;background:none;color:white;border:0;text-align:left;font-weight:bold;display:flex;justify-content:s
+pace-between}
+.faq-answer{display:none;padding:0 5px 18px;color:#aaa;font-size:12px;line-height:1.9}
+.faq-item.open .faq-answer{display:block}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.contactbox{background:var(--panel);padding:30px;border:1px solid #59472c}
+.contactbox h3{margin-bottom:20px;color:var(--gold)}
+.contactbox p{font-size:13px;color:#aaa;line-height:2;margin:13px 0}
+.contactbox strong{color:var(--gold)}
+.form{display:grid;gap:12px;margin-top:20px}
+.form input,.form textarea{width:100%;padding:14px;background:#090b09;border:1px solid #444;color:white;font-size:12px}
+.form textarea{min-height:100px;resize:vertical}
+footer{background:#050705;padding:45px 8% 25px;border-top:1px solid #59472c} .footergrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
+footer h3{color:var(--gold);margin-bottom:15px}
+footer p,footer a{color:#999;font-size:11px;line-height:2}
+footer a{display:block;margin:7px 0}
+.copy{border-top:1px solid #333;margin-top:30px;padding-top:20px;color:#777;font-size:10px}
+.float{position:fixed;right:16px;bottom:16px;z-index:20;display:grid;gap:9px}
+.float a{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:var(--gold);color:#111;font-weight:bold;fon
+t-size:18px}
+@media(max-width:850px){
+.navlinks{display:none;position:absolute;top:70px;left:0;width:100%;background:#090b09;padding:25px;flex-direction:column;align-items:fl
+ex-start}
+.navlinks.active{display:flex}.menu{display:block}
+.about,.contact{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}
 }
-
-:root {
-    --gold: #d5ad62;
-    --dark: #090909;
-    --panel: #151515;
-    --white: #f5f2eb;
-    --muted: #aaa;
-}
-
-body {
-    background: var(--dark);
-    color: var(--white);
-    font-family: 'Montserrat', sans-serif;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-nav {
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 8%;
-    background: #080808;
-    border-bottom: 1px solid #29231a;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.logo {
-    color: var(--gold);
-    font-size: 23px;
-    font-weight: 900;
-    letter-spacing: 1px;
-}
-
-.logo span {
-    display: block;
-    font-size: 9px;
-    color: #aaa;
-    letter-spacing: 5px;
-    margin-top: 3px;
-}
-
-.nav-links {
-    display: flex;
-    gap: 28px;
-    align-items: center;
-}
-
-.nav-links a {
-    font-size: 12px;
-    font-weight: 600;
-    color: #ddd;
-    transition: .3s;
-}
-
-.nav-links a:hover {
-    color: var(--gold);
-}
-
-.nav-btn {
-    padding: 12px 19px;
-    background: var(--gold);
-    color: #090909 !important;
-    border-radius: 3px;
-}
-
-.menu-btn {
-    display: none;
-    color: var(--gold);
-    font-size: 28px;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-.hero {
-    min-height: 650px;
-    padding: 100px 9%;
-    display: flex;
-    align-items: center;
-    background:
-    linear-gradient(90deg, #080808 15%, rgba(8,8,8,.88) 55%, rgba(8,8,8,.35)),
-    url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1800') center/cover;
-}
-
-.hero-content {
-    max-width: 680px;
-}
-
-.tag {
-    color: var(--gold);
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 4px;
-    margin-bottom: 24px;
-}
-
-.hero h1 {
-    font-size: clamp(42px, 7vw, 76px);
-    line-height: 1.1;
-    font-weight: 900;
-    text-transform: uppercase;
-}
-
-.hero h1 span {
-    color: var(--gold);
-}
-
-.hero p {
-    color: #bbb;
-    line-height: 1.9;
-    font-size: 14px;
-    max-width: 480px;
-    margin: 25px 0 35px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 16px 27px;
-    background: var(--gold);
-    color: #111;
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    margin-right: 10px;
-    transition: .3s;
-}
-
-.btn:hover {
-    background: #f0d18c;
-    transform: translateY(-3px);
-}
-
-.btn-outline {
-    border: 1px solid var(--gold);
-    color: var(--gold);
-    background: transparent;
-}
-
-section {
-    padding: 95px 9%;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 55px;
-}
-
-.section-title small {
-    color: var(--gold);
-    letter-spacing: 4px;
-    font-size: 11px;
-    font-weight: 700;
-}
-
-.section-title h2 {
-    font-size: 36px;
-    margin-top: 15px;
-    text-transform: uppercase;
-}
-
-.section-title h2 span {
-    color: var(--gold);
-}
-
-.about {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 65px;
-    align-items: center;
-}
-
-.about-image img {
-    width: 100%;
-    height: 430px;
-    object-fit: cover;
-    border-radius: 4px;
-    border: 1px solid #40321e;
-}
-
-.about-text h2 {
-    font-size: 37px;
-    line-height: 1.3;
-    margin-bottom: 23px;
-}
-
-.about-text h2 span {
-    color: var(--gold);
-}
-
-.about-text p {
-    color: var(--muted);
-    line-height: 2;
-    font-size: 13px;
-    margin-bottom: 20px;
-}
-
-.rating-section {
-    background: #121212;
-    text-align: center;
-    border-top: 1px solid #282116;
-    border-bottom: 1px solid #282116;
-}
-
-.rating-number {
-    font-size: 65px;
-    color: var(--gold);
-    font-weight: 900;
-}
-
-.stars {
-    color: var(--gold);
-    font-size: 27px;
-    letter-spacing: 5px;
-    margin: 12px 0;
-}
-
-.rating-section p {
-    color: #aaa;
-    font-size: 13px;
-}
-
-.services {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-}
-
-.service-card {
-    background: var(--panel);
-    padding: 35px 28px;
-    border: 1px solid #292929;
-    transition: .3s;
-}
-
-.service-card:hover {
-    border-color: var(--gold);
-    transform: translateY(-6px);
-}
-
-.service-icon {
-    font-size: 35px;
-    margin-bottom: 22px;
-}
-
-.service-card h3 {
-    color: var(--gold);
-    font-size: 17px;
-    margin-bottom: 15px;
-}
-
-.service-card p {
-    font-size: 12px;
-    line-height: 1.9;
-    color: #aaa;
-}
-
-.membership {
-    background:
-    linear-gradient(rgba(0,0,0,.88),rgba(0,0,0,.91)),
-    url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600') center/cover;
-    text-align: center;
-}
-
-.membership h2 {
-    font-size: 42px;
-    text-transform: uppercase;
-}
-
-.membership h2 span {
-    color: var(--gold);
-}
-
-.membership p {
-    color: #bbb;
-    margin: 20px auto 30px;
-    max-width: 550px;
-    font-size: 13px;
-    line-height: 1.9;
-}
-
-.contact {
-    background: #111;
-}
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-}
-
-.contact-info h3 {
-    font-size: 23px;
-    margin-bottom: 30px;
-}
-
-.contact-item {
-    margin-bottom: 28px;
-}
-
-.contact-item small {
-    color: var(--gold);
-    letter-spacing: 2px;
-    font-size: 10px;
-    font-weight: 700;
-}
-
-.contact-item p {
-    color: #bbb;
-    font-size: 13px;
-    line-height: 1.8;
-    margin-top: 8px;
-}
-
-.contact-item a:hover {
-    color: var(--gold);
-}
-
-.map {
-    min-height: 300px;
-    background: #1c1c1c;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #393027;
-    text-align: center;
-    padding: 25px;
-}
-
-.map span {
-    font-size: 40px;
-}
-
-.map h3 {
-    margin: 15px 0;
-    color: var(--gold);
-}
-
-.map p {
-    color: #aaa;
-    font-size: 12px;
-    margin-bottom: 20px;
-}
-
-footer {
-    padding: 30px 8%;
-    background: #070707;
-    border-top: 1px solid #29231a;
-    text-align: center;
-}
-
-footer h3 {
-    color: var(--gold);
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-}
-
-footer p {
-    color: #777;
-    font-size: 11px;
-    line-height: 2;
-}
-
-@media(max-width:850px) {
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 80px;
-        left: 0;
-        width: 100%;
-        background: #090909;
-        flex-direction: column;
-        padding: 25px;
-        border-bottom: 1px solid #333;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .menu-btn {
-        display: block;
-    }
-
-    .about,
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .services {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .hero {
-        min-height: 580px;
-    }
-}
-
-@media(max-width:550px) {
-    section {
-        padding: 70px 7%;
-    }
-
-    .services {
-        grid-template-columns: 1fr;
-    }
-
-    .hero {
-        padding: 80px 7%;
-    }
-
-    .hero h1 {
-        font-size: 43px;
-    }
-
-    .section-title h2,
-    .about-text h2 {
-        font-size: 29px;
-    }
-
-    .membership h2 {
-        font-size: 31px;
-    }
-
-    .btn {
-        margin-bottom: 12px;
-    }
+@media(max-width:550px){
+.hero{padding:90px 7%;min-height:570px}.stats{grid-template-columns:1fr 1fr}
+.grid,.diet{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}
+.gallery img{height:145px}.footergrid{grid-template-columns:1fr 1fr}
+.footergrid>div:first-child{grid-column:1/-1}
 }
 </style>
 </head>
-
 <body>
-
 <nav>
-    <a href="#" class="logo">
-        GURU FITNESS
-        <span>CLUB • MANSA</span>
-    </a>
-
-    <button class="menu-btn" onclick="toggleMenu()">☰</button>
-
-    <div class="nav-links" id="navLinks">
-        <a href="#home" onclick="closeMenu()">HOME</a>
-        <a href="#about" onclick="closeMenu()">ABOUT</a>
-        <a href="#services" onclick="closeMenu()">TRAINING</a>
-        <a href="#reviews" onclick="closeMenu()">REVIEWS</a>
-        <a href="#contact" onclick="closeMenu()">CONTACT</a>
-        <a href="tel:08000004776" class="nav-btn">JOIN / ENQUIRE</a>
-    </div>
+<a href="#home" class="logo">GURU FITNESS<small>CLUB · MANSA</small></a>
+<button class="menu" onclick="toggleMenu()" aria-label="Toggle navigation">■</button>
+<div class="navlinks" id="navlinks">
+<a href="#home">HOME</a><a href="#about">ABOUT</a><a href="#training">TRAINING</a>
+<a href="#diet">NUTRITION</a><a href="#gallery">GALLERY</a><a href="#reviews">REVIEWS</a>
+<a href="#contact">CONTACT</a><a href="https://sandeepmanoor.com/login">MEMBER LOGIN ■</a>
+</div>
 </nav>
-
-<!-- HERO -->
-
 <header class="hero" id="home">
-    <div class="hero-content">
-        <div class="tag">WELCOME TO GURU FITNESS CLUB</div>
-
-        <h1>
-            BUILD YOUR<br>
-            <span>STRENGTH.</span><br>
-            OWN YOURSELF.
-        </h1>
-
-        <p>
-            Your fitness journey starts here.
-            Discover Guru Fitness Club in Mansa
-            and take your next step towards a stronger,
-            healthier lifestyle.
-        </p>
-
-        <a href="tel:08000004776" class="btn">CALL NOW</a>
-
-        <a href="#about" class="btn btn-outline">EXPLORE MORE</a>
-    </div>
+<div class="hero-content">
+<div class="tag">DISCIPLINE · DEDICATION · PROGRESS</div>
+<h1>TRAIN WITH<br><span>PURPOSE.</span><br>LIVE STRONG.</h1>
+<p>Welcome to Guru Fitness Club, Mansa. Explore structured training, exercise demonstrations, member resources and a fitness community 
+focused on consistent progress.</p>
+<a href="#contact" class="btn">ENQUIRE ABOUT MEMBERSHIP</a>
+<a href="https://sandeepmanoor.com/login" class="btn outline">MEMBER LOGIN ■</a>
+<p><strong class="gold">4.9 ★</strong> &nbsp; CUSTOMER RATING · 195 REVIEWS</p>
+</div>
 </header>
-
-<!-- ABOUT -->
-
-<section id="about">
-    <div class="about">
-        <div class="about-image">
-            <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=900"
-            alt="Fitness gym interior">
-        </div>
-
-        <div class="about-text">
-            <div class="tag">ABOUT OUR CLUB</div>
-
-            <h2>
-                WELCOME TO<br>
-                <span>GURU FITNESS CLUB</span>
-            </h2>
-
-            <p>
-                Welcome to Guru Fitness Club, Mansa.
-                A place to focus on fitness, build healthy
-                habits and work towards your personal goals.
-            </p>
-
-            <p>
-                Whether you are starting your fitness
-                journey or continuing your training,
-                contact our club to learn more about
-                membership and available facilities.
-            </p>
-
-            <a href="#contact" class="btn">VISIT OUR CLUB</a>
-        </div>
-    </div>
+<div class="container"><div class="stats">
+<div class="stat"><strong>800+</strong><small>REGISTERED MEMBERS*</small></div>
+<div class="stat"><strong>94</strong><small>EXERCISE DEMONSTRATIONS*</small></div>
+<div class="stat"><strong>2</strong><small>MANSA BRANCHES*</small></div>
+<div class="stat"><strong>4.9★</strong><small>RATING · 195 REVIEWS</small></div>
+</div></div>
+<section id="about"><div class="container about">
+<img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1000" alt="Gym interior">
+<div><div class="tag">GET TO KNOW US</div>
+<h2>MORE THAN A <span class="gold">GYM.</span></h2>
+<p>Guru Fitness Club brings together workout plans, exercise demonstrations and member support in one fitness experience.</p>
+<p>Members can use the existing online platform to access their account and any services made available to them.</p>
+<a href="#contact" class="btn">CONTACT THE CLUB</a></div>
+</div></section>
+<section class="dark" id="training"><div class="container">
+<div class="heading"><div class="tag">YOUR FITNESS JOURNEY</div><h2>OUR <span>TRAINING</span></h2>
+<p>Explore training categories and member resources. Ask the club to confirm which services are currently available.</p></div>
+<div class="grid">
+<div class="card"><div class="number">01</div><h3>Beginner Training</h3><p>Explore introductory workout plans and learn exercise 
+fundamentals.</p><a href="https://sandeepmanoor.com/login">MEMBER ACCESS ■</a></div>
+<div class="card"><div class="number">02</div><h3>Intermediate Training</h3><p>Discover organised training splits and workout 
+schedules.</p><a href="https://sandeepmanoor.com/login">MEMBER ACCESS ■</a></div>
+<div class="card"><div class="number">03</div><h3>Advanced Training</h3><p>Explore structured training resources for experienced 
+members.</p><a href="https://sandeepmanoor.com/login">MEMBER ACCESS ■</a></div>
+<div class="card"><div class="number">04</div><h3>Muscle Group Workouts</h3><p>Browse exercise categories organised around different 
+muscle groups.</p><a href="https://sandeepmanoor.com/login">VIEW MEMBER AREA ■</a></div>
+<div class="card"><div class="number">05</div><h3>Exercise Library</h3><p>The existing club website advertises 94 exercise 
+demonstrations.</p><a href="https://sandeepmanoor.com/login">EXPLORE ■</a></div>
+<div class="card"><div class="number">06</div><h3>Progress Records</h3><p>Access recorded measurements and progress features through 
+your private member account.</p><a href="https://sandeepmanoor.com/login">MEMBER LOGIN ■</a></div>
+</div></div></section>
+<section><div class="container">
+<div class="heading"><div class="tag">EXERCISE LIBRARY</div><h2>EXPLORE <span>FITNESS</span></h2>
+<p>Search these sample exercise categories. The full member exercise library remains on the existing platform.</p></div>
+<div class="search"><input id="exerciseSearch" placeholder="Search exercise categories..." oninput="filterExercises()"><button 
+onclick="filterExercises()">SEARCH</button></div>
+<div class="grid" id="exerciseGrid">
+<div class="card exercise" data-name="strength weight training"><img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w
+=600" alt="Strength training"><div class="inside"><h3>Strength Training</h3><p>Explore strength exercise categories.</p></div></div>
+<div class="card exercise" data-name="upper body training"><img src="https://images.unsplash.com/photo-1534258936925-c58bed479fcb?w=600"
+ alt="Upper body exercise"><div class="inside"><h3>Upper Body</h3><p>Discover upper body movements.</p></div></div>
+<div class="card exercise" data-name="general fitness workout"><img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=
+600" alt="Fitness workout"><div class="inside"><h3>General Fitness</h3><p>Explore general fitness activities.</p></div></div>
+</div><p id="noResults" style="display:none;text-align:center;color:#aaa;margin-top:20px">No matching categories found.</p>
+</div></section>
+<section class="dark" id="diet"><div class="container">
+<div class="heading"><div class="tag">NUTRITION & WELLNESS</div><h2>FUEL YOUR <span>JOURNEY</span></h2>
+<p>Nutrition information and member access.</p></div>
+<div class="diet">
+<div class="dietbox"><h3>Personalised Diet Plans</h3><p>Members can check the existing platform for assigned diet-plan information and 
+contact the club for details about nutrition support.</p><a href="https://sandeepmanoor.com/login" class="btn">MEMBER LOGIN</a></div> <div class="dietbox"><h3>Healthy Habits</h3><p>Build consistent everyday habits, aim for balanced meals and seek qualified guidance for 
+your individual needs.</p><a href="#contact" class="btn outline">ENQUIRE NOW</a></div>
+</div></div></section>
+<section><div class="container">
+<div class="heading"><div class="tag">MEMBERSHIP</div><h2>START YOUR <span>JOURNEY</span></h2><p>Contact the club to confirm membership 
+options, fees, timings and registration details.</p></div>
+<div class="grid">
+<div class="card"><div class="number">01</div><h3>Enquire</h3><p>Call or message the club to ask about membership options.</p></div>
+<div class="card"><div class="number">02</div><h3>Visit</h3><p>Visit the gym to check facilities and ask about registration.</p></div>
+<div class="card"><div class="number">03</div><h3>Get Started</h3><p>Ask how to access your member account and available 
+plans.</p></div>
+</div></div></section>
+<section class="banner"><div class="tag">YOUR NEXT CHAPTER STARTS HERE</div>
+<h2>READY TO GET <span>STRONGER?</span></h2>
+<p>Contact Guru Fitness Club for membership details, training information and available facilities.</p>
+<a href="tel:+918000004776" class="btn">CALL THE CLUB</a>
+<a href="https://wa.me/918000004776" class="btn outline">WHATSAPP US</a>
 </section>
-
-<!-- RATING -->
-
-<section class="rating-section" id="reviews">
-    <div class="section-title">
-        <small>TRUST & REPUTATION</small>
-        <h2>OUR <span>RATING</span></h2>
-    </div>
-
-    <div class="rating-number">4.9/5</div>
-    <div class="stars">★★★★★</div>
-
-    <p>Rated 4.9 by customers • 195 reviews</p>
-</section>
-
-<!-- TRAINING -->
-
-<section id="services">
-    <div class="section-title">
-        <small>YOUR FITNESS JOURNEY</small>
+<section id="gallery"><div class="container">
+<div class="heading"><div class="tag">INSIDE THE FITNESS WORLD</div><h2>PHOTO <span>GALLERY</span></h2><p>Sample gym imagery. Replace 
+these stock photos with actual club photographs before publishing.</p></div>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600" alt="Gym equipment">
+<img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600" alt="Gym interior">
+<img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=600" alt="Weight training">
+<img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600" alt="Fitness training">
+</div></div></section>
+<section class="dark" id="reviews"><div class="container">
+<div class="heading"><div class="tag">CUSTOMER FEEDBACK</div><h2>OUR <span>REPUTATION</span></h2></div>
+<div class="rating"><strong>4.9/5</strong><div class="stars">★★★★★</div><p>Business rating supplied: 195 reviews.</p><a class="btn" 
+target="_blank" rel="noopener" href="https://www.google.com/search?q=Guru+Fitness+Club+Mansa+reviews">VIEW REVIEWS</a></div>
+</div></section>
+<section><div class="container">
+<div class="heading"><div class="tag">NEED HELP?</div><h2>FREQUENTLY ASKED <span>QUESTIONS</span></h2></div>
+<div class="faq">
+<div class="faq-item"><button onclick="faq(this)">Where is Guru Fitness Club located? <span>+</span></button><div 
+class="faq-answer">The supplied address is Civil Hospital Road, opposite SBI Bank, near HDFC Bank, Sadar, Mansa, Punjab 151505. Confirm 
+the current address with the club before visiting.</div></div>
+<div class="faq-item"><button onclick="faq(this)">How can I ask about membership? <span>+</span></button><div class="faq-answer">Call 
++91 80000 04776 or send a WhatsApp message to enquire about membership fees, timings and registration.</div></div>
+<div class="faq-item"><button onclick="faq(this)">How do existing members log in? <span>+</span></button><div class="faq-answer">Use 
+the Member Login link to access the existing platform at sandeepmanoor.com.</div></div>
+<div class="faq-item"><button onclick="faq(this)">Are diet plans available? <span>+</span></button><div class="faq-answer">Check your 
+existing member account or contact the club to confirm available diet-plan services.</div></div>
+</div></div></section>
+<section class="dark" id="contact"><div class="container">
+<div class="heading"><div class="tag">GET IN TOUCH</div><h2>VISIT <span>OUR CLUB</span></h2></div>
+<div class="contact">
+<div class="contactbox"><h3>Contact Information</h3>
+<p><strong>BUSINESS</strong><br>Guru Fitness Club Mansa</p>
+<p><strong>PHONE</strong><br><a href="tel:+918000004776">+91 80000 04776</a></p>
+<p><strong>ADDRESS PROVIDED</strong><br>Civil Hospital Road, opposite SBI Bank, near HDFC Bank, Sadar, Mansa, Punjab 151505, India.</p>
+<p><strong>RATING</strong><br>★ 4.9 / 5 · 195 reviews</p>
+<a href="tel:+918000004776" class="btn">CALL NOW</a>
+<a href="https://wa.me/918000004776" class="btn outline">WHATSAPP</a>
+</div>
+<div class="contactbox"><h3>Send an Enquiry</h3>
+<p>Fill in your details to open a WhatsApp enquiry message.</p>
+<form class="form" onsubmit="sendEnquiry(event)">
+<input id="name" placeholder="Your name" required>
+<input id="phone" placeholder="Your phone number" type="tel" required>
+<textarea id="message" placeholder="What would you like to know?" required></textarea>
+<button class="btn" type="submit">SEND ENQUIRY →</button>
+</form>
+</div>
+</div>
+<p style="margin-top:25px;text-align:center"><a class="btn" target="_blank" rel="noopener" 
+href="https://www.google.com/maps/search/?api=1&query=Guru+Fitness+Club+Mansa+Punjab">OPEN GOOGLE MAPS DIRECTIONS ■</a></p>
+</div></section>
+</main>
+<footer><div class="footergrid">
+<div><h3>GURU FITNESS CLUB</h3><p>Strength. Discipline. Consistency.<br>Mansa, Punjab, India.</p></div>
+<div><h3>EXPLORE</h3><a href="#about">About</a><a href="#training">Training</a><a href="#diet">Nutrition</a><a 
+href="#gallery">Gallery</a></div>
+<div><h3>QUICK LINKS</h3><a href="#contact">Contact</a><a href="https://sandeepmanoor.com/login">Member Login</a><a 
+href="tel:+918000004776">Call Us</a></div>
+</div><div class="copy">© 2026 Guru Fitness Club. Website concept. All rights reserved.</div></footer>
+<div class="float">
+<a href="tel:+918000004776" aria-label="Call">☎</a>
+<a href="https://wa.me/918000004776" aria-label="WhatsApp">W</a>
+</div>
+<script>
+function toggleMenu(){
+document.getElementById('navlinks').classList.toggle('active');
+}
+document.querySelectorAll('.navlinks a').forEach(link=>{
+link.addEventListener('click',()=>document.getElementById('navlinks').classList.remove('active'));
+});
+function filterExercises(){
+const q=document.getElementById('exerciseSearch').value.toLowerCase();
+let visible=0; document.querySelectorAll('#exerciseGrid .exercise').forEach(card=>{
+const match=card.dataset.name.includes(q)||card.innerText.toLowerCase().includes(q);
+card.style.display=match?'block':'none';
+if(match)visible++;
+});
+document.getElementById('noResults').style.display=visible?'none':'block';
+}
+function faq(button){
+const item=button.parentElement;
+item.classList.toggle('open');
+button.querySelector('span').textContent=item.classList.contains('open')?'−':'+';
+}
+function sendEnquiry(event){
+event.preventDefault();
+const name=document.getElementById('name').value.trim();
+const phone=document.getElementById('phone').value.trim();
+const message=document.getElementById('message').value.trim();
+const text=`Hello Guru Fitness Club!%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AEnquiry:small>
         <h2>FITNESS & <span>TRAINING</span></h2>
     </div>
 
